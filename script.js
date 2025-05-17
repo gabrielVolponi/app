@@ -25,6 +25,11 @@ const copiarSenha = document.getElementById("copiarSenha");
 copiarSenha.addEventListener("click", function () {
     const senhaCopiada = document.getElementById("senhaGerada").textContent;
     navigator.clipboard.writeText(senhaCopiada).then(() => {
-        alert("Senha copiada para a área de transferência!");
+        // alert("Senha copiada para a área de transferência!");
+        const modal = document.getElementById("modalCopied");
+        modal.classList.remove("hidden");
+        setTimeout(() => {
+            modal.classList.add("hidden");
+        }, 1500);
     })
 });
